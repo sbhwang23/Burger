@@ -11,12 +11,9 @@ const orm = {
     });
     },
 
-    insertOne: function(tableName, col, val, cb) {
-        const query = 'INSERT INTO ?? VALUES ?', {
-            burger_name: burger_name,
-            devoured: false,
-        }
-        connection.query(query, [tableName, col, val], (err, result) => {
+    insertOne: function(tableName, vals, cb) {
+        const query = 'INSERT INTO ?? VALUES ?';
+        connection.query(query, [tableName, vals], (err, result) => {
             if (err) {
                 throw err;
             }
