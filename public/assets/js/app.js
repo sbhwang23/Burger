@@ -4,7 +4,7 @@ $(document).ready(function(){
         // console.log('id: ', id)
         // var devoured = $(this).data("devoured");
         const devoured = $(this).data('devoured');
-        console.log('data value: ', $(this).data('devoured'))
+        console.log('data value: ', $(this).data('devoured'));
         const newDevouredState = {
           devoured: devoured
         };

@@ -21,9 +21,9 @@ const orm = {
         });
     },
 
-    updateOne: function(tableName, colVal, condition, cb) {
-        const query = 'UPDATE ?? SET ? WHERE ?';
-        connection.query(query, [tableName, colVal, condition], (err, result) => {
+    updateOne: function(tableName, objColVals, condition, cb) {
+        const query = 'UPDATE ? SET ? WHERE ?';
+        connection.query(query, [tableName, objColVals, condition], (err, result) => {
             if (err) {
                 throw err;
             }
