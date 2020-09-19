@@ -16,7 +16,7 @@ router.post("/api/burgers", function(req, res) {
     burger.insertOne(
       'burger_name',
       req.body.burger_name, function(result) {
-        console.log('burger result:', result);
+        console.log('burger result: ', result);
       // res.json({ id: result.insertId });
       location.reload();
     });
@@ -25,10 +25,10 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
     const condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
+    // console.log("condition", condition);
     console.log('req.body.devoured: ', req.body.devoured)
     burger.updateOne({
-      devoured: req.body.devoured === 'true'
+      devoured: req.body.devoured 
     }, condition, function(result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
