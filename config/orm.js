@@ -11,9 +11,9 @@ const orm = {
     });
     },
 
-    insertOne: function(tableName, vals, cb) {
-        const query = 'INSERT INTO ?? VALUES ?';
-        connection.query(query, [tableName, vals], (err, result) => {
+    insertOne: function(tableName, cols, vals, cb) {
+        const query = `INSERT INTO ${tableName} (${cols}) VALUES ('${vals}')`;
+        connection.query(query, (err, result) => {
             if (err) {
                 throw err;
             }
@@ -21,7 +21,7 @@ const orm = {
         });
     },
 
-    updateOne: function(tableName, colVal, cb) {
+    updateOne: function(tableName, colVal, condition, cb) {
         const query = 'UPDATE ?? SET ? WHERE ?';
         connection.query(query, [tableName, colVal, condition], (err, result) => {
             if (err) {
