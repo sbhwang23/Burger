@@ -12,24 +12,24 @@ router.get('/', function(req, res) {
     });
   });
 
-router.post("/api/burgers", function(req, res) {
+router.post('/api/burgers', function(req, res) {
     burger.insertOne(
       'burger_name',
       req.body.burger_name, function(result) {
         console.log('burger result: ', result);
       // res.json({ id: result.insertId });
-      location.reload();
+      res.redirect('/');
     });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
-    const condition = "id = " + req.params.id;
+router.put('/api/burgers/:id', function(req, res) {
+    const condition = `id = ${req.params.id}`;
 
+    const colVal = `devoured = ${req.body.devoured}`;
     console.log("condition", condition);
     console.log('req.body.devoured: ', req.body.devoured)
-    burger.updateOne({
-      devoured: req.body.devoured 
-    }, condition, function(result) {
+    burger.updateOne(colVal, condition, function(result) {
+      console.log('result:', result)
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
