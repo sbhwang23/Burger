@@ -1,5 +1,16 @@
 <h1>Eat-Da-Burger!</h1>
 
+<div class = 'form'>
+<h2>Add a Burger</h2>
+
+  <form action='/api/burgers' method='POST'>
+  	<input class= 'inputBurger' type='text' name='burger_name'>
+
+  	<button class='addBurger' type='submit'>Add burger!</button>
+  </form>
+</div>
+
+<div class = 'toDevoured'>
 <h2>Burgers!</h2>
 
 <ul>
@@ -7,14 +18,16 @@
     {{#unless devoured}}
     <li>
 	    {{burger_name}}
-	    <button class="change-devour" data-id="{{id}}" data="{{devoured}}" data-devoured="true">
+	    <button class='change-devour' data-id='{{id}}' data='{{devoured}}' data-devoured='true'>
 	  	Devour it!
 	    </button>
     </li>
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
+<div class = 'devoured'>
 <h2>Devoured!</h2>
 
 <ul>
@@ -26,15 +39,8 @@
     {{/if}}
   {{/each}}
 </ul>
-
-<h2>Add a Burger</h2>
-<div>
-  <form action="/api/burgers" method="POST">
-  	<textarea type="text" name="burger_name"></textarea>
-
-  	<button type="submit">Add burger!</button>
-  </form>
 </div>
+
 
 
  

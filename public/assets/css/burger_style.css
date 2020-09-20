@@ -1,0 +1,73 @@
+* {
+    background-color: lightskyblue;
+    box-sizing: border-box;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+    grid-area: h;
+    margin: 1rem;
+}
+
+h2 {
+   font-size: 2rem;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background-color: lightcyan;
+    border-color: lightsteelblue;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    padding: 0 2px;
+    width: max-content;
+}
+.addBurger {
+    margin-left: 1rem;
+}
+
+form {
+    display: inline-flex;
+    grid-area: b;
+    width: 40%;
+}
+
+.form {
+    display: inline;
+    grid-area: b;
+    text-align: center;
+}
+
+.inputBurger {
+    height: 3rem;
+}
+
+.devoured {
+    grid-area: r;
+}
+
+.toDevoured {
+    grid-area: l;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        display: grid;
+        grid-template-areas: 'h h'
+                             'b b'
+                             'l r';
+        grid-template-rows: 100px 200px auto;
+    }
+}
