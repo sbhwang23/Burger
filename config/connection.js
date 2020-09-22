@@ -19,6 +19,6 @@ db.connect(function(err) {
   }
   console.log("connected as id " + db.threadId);
 });
+}
 
 module.exports = db;
-
